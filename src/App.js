@@ -1,28 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import { Provider } from 'react-redux';
+import store from './store';
 
-export default App;
+import Search from './Search';
+import Details from './Details';
+
+const App = () => (
+  <div className="m-3">
+    <Search />
+    <div className="my-3">
+      <Details />
+    </div>
+  </div>
+);
+
+export default () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
