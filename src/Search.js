@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 
 import { searchShows, selectShow } from './actions';
 
-const Search = ({
-  shows, fetchShows, selectShow, onChange,
-}) => {
+const Search = ({ shows, fetchShows, selectShow }) => {
   const [value, setValue] = useState('');
   const options = (shows.search[value] || []).map(id => shows.detail[id]);
 
@@ -25,6 +24,12 @@ const Search = ({
       options={options}
     />
   );
+};
+
+Search.propTypes = {
+  shows: PropTypes.any,
+  fetchShows: PropTypes.any,
+  selectShow: PropTypes.any,
 };
 
 const mapStateToProps = state => ({
