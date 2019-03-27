@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { SEARCH_SHOWS, SELECT_SHOW } from './actions';
+import { SEARCH_SHOWS, SELECT_SHOW } from '../actions';
 
 const initialShowState = {
   detail: {},
