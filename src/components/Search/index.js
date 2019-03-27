@@ -11,7 +11,7 @@ const Search = ({ shows, fetchShows, selectShow }) => {
   const options = (shows.search[value] || []).map(id => shows.detail[id]);
   return (
     <>
-      <div className="jumbotron">
+      <div className="jumbotron mt-3">
         <div className="container">
           <h1 className="display-3">Hello, world!</h1>
           <AsyncTypeahead
